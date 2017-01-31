@@ -43,6 +43,7 @@ class EnvValidator
 
     /**
      * @param ValidatorContract $validator
+     *
      * @return EnvValidator
      */
     public function setValidator(ValidatorContract $validator)
