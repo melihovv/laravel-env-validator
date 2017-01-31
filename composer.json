@@ -1,0 +1,42 @@
+{
+  "name": "melihovv/laravel-env-validator",
+  "description": "Laravel Validator for the .env file",
+  "license": "MIT",
+  "keywords": [
+    "env",
+    "env-validator",
+    "validation",
+    "laravel"
+  ],
+  "authors": [
+    {
+      "name": "Alexander Melihov",
+      "email": "amelihovv@ya.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Melihovv\\LaravelEnvValidator\\": "src/LaravelEnvValidator"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Melihovv\\LaravelEnvValidator\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "illuminate/support": "^5.4"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^3.4",
+    "phpunit/phpunit": "^5.7",
+    "phpmd/phpmd": "^2.6",
+    "squizlabs/php_codesniffer": "^2.7"
+  },
+  "scripts": {
+    "phpunit": "phpunit",
+    "phpmd": "phpmd src/LaravelEnvValidator text ./phpmd-rules.xml",
+    "phpcs": "phpcs --standard=./phpcs-rules.xml --encoding=utf-8 src/LaravelEnvValidator",
+    "phpcbf": "phpcbf --standard=./phpcs-rules.xml --encoding=utf-8 src/LaravelEnvValidator"
+  }
+}

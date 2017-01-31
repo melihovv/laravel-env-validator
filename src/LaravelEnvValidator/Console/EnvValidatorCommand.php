@@ -1,0 +1,21 @@
+<?php
+
+namespace Melihovv\LaravelEnvValidator\Console;
+
+use Illuminate\Console\Command;
+use Melihovv\LaravelEnvValidator\EnvValidatorFactory;
+
+class EnvValidatorCommand extends Command
+{
+    protected $signature = 'config:env-validator';
+
+    protected $description = 'Validate variables in the .env file';
+
+    public function handle()
+    {
+        $validator = EnvValidatorFactory::buildFromLaravelConfig();
+        $validator->validate();
+
+        $this->info('All env variables validated successfully');
+    }
+}
