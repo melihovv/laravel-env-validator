@@ -4,6 +4,7 @@ Laravel Env Validator
 [![Build Status](https://travis-ci.org/melihovv/laravel-env-validator.svg?branch=master)](https://travis-ci.org/melihovv/laravel-env-validator)
 [![styleci](https://styleci.io/repos/78041678/shield)](https://styleci.io/repos/78041678)
 [![Packagist](https://img.shields.io/packagist/v/melihovv/laravel-env-validator.svg)](https://packagist.org/packages/melihovv/laravel-env-validator)
+[![Packagist](https://poser.pugx.org/melihovv/laravel-env-validator/d/total.svg)](https://packagist.org/packages/melihovv/laravel-env-validator)
 [![Packagist](https://img.shields.io/packagist/l/melihovv/laravel-env-validator.svg)](https://packagist.org/packages/melihovv/laravel-env-validator)
 
 Laravel Env Validator is meant to validate your .env file in order to avoid any
