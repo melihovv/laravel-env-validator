@@ -25,6 +25,9 @@ composer require melihovv/laravel-env-validator
 
 ### Register Service Provider
 
+Note! It is optional step if you use laravel>=5.5 with package auto discovery
+feature.
+
 Add Service Provider to `config/app.php` in `providers` section
 ```php
 Melihovv\LaravelEnvValidator\ServiceProvider::class,

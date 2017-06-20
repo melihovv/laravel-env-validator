@@ -38,5 +38,12 @@
     "phpmd": "phpmd src/LaravelEnvValidator text ./phpmd-rules.xml",
     "phpcs": "phpcs --standard=./phpcs-rules.xml --encoding=utf-8 src/LaravelEnvValidator",
     "phpcbf": "phpcbf --standard=./phpcs-rules.xml --encoding=utf-8 src/LaravelEnvValidator"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Melihovv\\LaravelEnvValidator\\ServiceProvider"
+      ]
+    }
   }
 }
