@@ -70,3 +70,4 @@ If you discover any security related issues, please email amelihovv@ya.ru instea
 - [Alexander Melihov](https://github.com/melihovv)
 - [Mathias Grimm](https://github.com/mathiasgrimm)
 - [David Stroker](https://github.com/davidstoker)
+- [All contributors](https://github.com/melihovv/laravel-env-validator/graphs/contributors)
