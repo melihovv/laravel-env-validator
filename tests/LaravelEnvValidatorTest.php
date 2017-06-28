@@ -4,10 +4,16 @@ namespace Melihovv\LaravelEnvValidator\Tests;
 
 use Melihovv\LaravelEnvValidator\EnvValidatorFactory;
 use Melihovv\LaravelEnvValidator\Exception;
+use Melihovv\LaravelEnvValidator\ServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class LaravelEnvValidatorTest extends TestCase
 {
+    protected function getPackageProviders($app)
+    {
+        return [ServiceProvider::class];
+    }
+
     /** @test */
     public function it_has_the_right_error_message()
     {
@@ -23,11 +29,15 @@ class LaravelEnvValidatorTest extends TestCase
             $envValidator->validate();
         } catch (Exception $e) {
             $this->assertContains(
-                'The VAR_1 variable is not defined or invalid',
+                'VAR_1',
                 $e->getMessage()
             );
             $this->assertContains(
-                'The VAR_2 variable is not defined or invalid',
+                'VAR_2',
+                $e->getMessage()
+            );
+            $this->assertContains(
+                'required',
                 $e->getMessage()
             );
         }

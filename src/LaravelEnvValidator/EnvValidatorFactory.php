@@ -2,15 +2,8 @@
 
 namespace Melihovv\LaravelEnvValidator;
 
-use Illuminate\Contracts\Validation\Validator;
-
 class EnvValidatorFactory
 {
-    public static function buildFromValidator(Validator $validator)
-    {
-        return new EnvValidator($validator);
-    }
-
     public static function buildFromLaravelConfig()
     {
         $config = config('laravel-env-validator.rules', []);
@@ -22,6 +15,9 @@ class EnvValidatorFactory
 
         $validator = \Validator::make($env, $config);
 
-        return static::buildFromValidator($validator);
+        $varsNames = array_keys($env);
+        $validator->setAttributeNames(array_combine($varsNames, $varsNames));
+
+        return new EnvValidator($validator);
     }
 }

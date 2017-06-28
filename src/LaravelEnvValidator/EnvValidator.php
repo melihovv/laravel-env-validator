@@ -2,16 +2,16 @@
 
 namespace Melihovv\LaravelEnvValidator;
 
-use Illuminate\Contracts\Validation\Validator as ValidatorContract;
+use Illuminate\Validation\Validator;
 
 class EnvValidator
 {
     /**
-     * @var ValidatorContract
+     * @var Validator
      */
     private $validator;
 
-    public function __construct(ValidatorContract $validator)
+    public function __construct(Validator $validator)
     {
         $this->validator = $validator;
     }
@@ -19,9 +19,8 @@ class EnvValidator
     public function validate()
     {
         if ($this->validator->fails()) {
-            $format = 'The :key variable is not defined or invalid';
             $messages = array_values(
-                $this->validator->messages()->all($format)
+                $this->validator->messages()->all()
             );
 
             $message = 'The .env file has some problems.'
@@ -31,25 +30,5 @@ class EnvValidator
 
             throw new Exception($message);
         }
-    }
-
-    /**
-     * @return ValidatorContract
-     */
-    public function getValidator()
-    {
-        return $this->validator;
-    }
-
-    /**
-     * @param ValidatorContract $validator
-     *
-     * @return EnvValidator
-     */
-    public function setValidator(ValidatorContract $validator)
-    {
-        $this->validator = $validator;
-
-        return $this;
     }
 }
