@@ -15,6 +15,10 @@ class ServiceProvider extends Provider
             self::CONFIG_PATH => config_path('laravel-env-validator.php'),
         ], 'config');
 
+        if ($this->app->runningInConsole()) {
+            $this->commands([EnvValidatorCommand::class]);
+        }
+
         if (config('laravel-env-validator.live_validation')) {
             $validator = EnvValidatorFactory::buildFromLaravelConfig();
             $validator->validate();
@@ -24,7 +28,5 @@ class ServiceProvider extends Provider
     public function register()
     {
         $this->mergeConfigFrom(self::CONFIG_PATH, 'laravel-env-validator');
-
-        $this->commands([EnvValidatorCommand::class]);
     }
 }
