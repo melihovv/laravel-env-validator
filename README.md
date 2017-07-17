@@ -5,6 +5,7 @@ Laravel Env Validator
 [![styleci](https://styleci.io/repos/78041678/shield)](https://styleci.io/repos/78041678)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0ed1727a-ede0-4cdc-ac45-0d31eddb1596/mini.png)](https://insight.sensiolabs.com/projects/0ed1727a-ede0-4cdc-ac45-0d31eddb1596)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/melihovv/laravel-env-validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/melihovv/laravel-env-validator/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/melihovv/laravel-env-validator/badge.svg?branch=master)](https://coveralls.io/github/melihovv/laravel-env-validator?branch=master)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/laravel-env-validator.svg)](https://packagist.org/packages/melihovv/laravel-env-validator)
 [![Packagist](https://poser.pugx.org/melihovv/laravel-env-validator/d/total.svg)](https://packagist.org/packages/melihovv/laravel-env-validator)
