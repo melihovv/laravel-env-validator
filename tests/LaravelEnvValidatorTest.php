@@ -55,12 +55,18 @@ class LaravelEnvValidatorTest extends TestCase
         ]);
         $envValidator = EnvValidatorFactory::buildFromLaravelConfig();
         $envValidator->validate();
+
+        $this->assertTrue(true);
     }
 
     /** @test */
     public function it_doest_not_throw_exception_if_no_configuration_is_defined()
     {
+        \Config::set('laravel-env-validator.rules', []);
+
         $envValidator = EnvValidatorFactory::buildFromLaravelConfig();
         $envValidator->validate();
+
+        $this->assertTrue(true);
     }
 }
