@@ -32,5 +32,5 @@ script:
   - composer run phpcpd
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - php vendor/bin/php-coveralls -v
 
