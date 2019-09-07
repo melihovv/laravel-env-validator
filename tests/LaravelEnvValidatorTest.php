@@ -28,15 +28,15 @@ class LaravelEnvValidatorTest extends TestCase
             $envValidator = EnvValidatorFactory::buildFromLaravelConfig();
             $envValidator->validate();
         } catch (Exception $e) {
-            $this->assertContains(
+            $this->assertStringContainsString(
                 'VAR_1',
                 $e->getMessage()
             );
-            $this->assertContains(
+            $this->assertStringContainsString(
                 'VAR_2',
                 $e->getMessage()
             );
-            $this->assertContains(
+            $this->assertStringContainsString(
                 'required',
                 $e->getMessage()
             );
