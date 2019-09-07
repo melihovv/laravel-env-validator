@@ -25,16 +25,6 @@ Install via composer
 composer require melihovv/laravel-env-validator
 ```
 
-### Register Service Provider
-
-Note! It is optional step if you use laravel>=5.5 with package auto discovery
-feature.
-
-Add Service Provider to `config/app.php` in `providers` section
-```php
-Melihovv\LaravelEnvValidator\ServiceProvider::class,
-```
-
 ### Publish configuration file
 
 ```
@@ -47,7 +37,6 @@ php artisan vendor:publish --provider="Melihovv\LaravelEnvValidator\ServiceProvi
 <?php
 
 return [
-    'live_validation' => false,
     'rules' => [
         'SOME_IMPORTANT_VARIABLE' => 'required',
         'ANOTHER_IMPORTANT_ONE'   => 'required|in:TYPE_A,TYPE_B,TYPE_C',
@@ -56,12 +45,10 @@ return [
 ```
 
 ## Usage
-In case you set `live_validation` to `false` in config, you may use artisan
-command
+Simply run following command
 ```
 php artisan config:env-validator
 ```
-Otherwise env variables will be validated on every application start.
 
 ## Security
 
