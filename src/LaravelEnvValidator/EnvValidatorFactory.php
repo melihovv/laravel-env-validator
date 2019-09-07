@@ -2,6 +2,8 @@
 
 namespace Melihovv\LaravelEnvValidator;
 
+use Illuminate\Support\Facades\Validator;
+
 class EnvValidatorFactory
 {
     public static function buildFromLaravelConfig()
@@ -13,7 +15,7 @@ class EnvValidatorFactory
             $env[$variable] = env($variable);
         }
 
-        $validator = \Validator::make($env, $config);
+        $validator = Validator::make($env, $config);
 
         $varsNames = array_keys($env);
         $validator->setAttributeNames(array_combine($varsNames, $varsNames));

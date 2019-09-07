@@ -18,11 +18,6 @@ class ServiceProvider extends Provider
         if ($this->app->runningInConsole()) {
             $this->commands([EnvValidatorCommand::class]);
         }
-
-        if (config('laravel-env-validator.live_validation')) {
-            $validator = EnvValidatorFactory::buildFromLaravelConfig();
-            $validator->validate();
-        }
     }
 
     public function register()

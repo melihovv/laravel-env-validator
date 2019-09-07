@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'live_validation' => false,
     'rules' => [
         'APP_ENV' => 'in:local,production',
         'APP_KEY' => 'required',
