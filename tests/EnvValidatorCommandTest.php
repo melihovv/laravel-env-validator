@@ -15,7 +15,7 @@ class EnvValidatorCommandTest extends TestCase
     }
 
     /** @test */
-    function it_has_the_right_error_message()
+    public function it_has_the_right_error_message()
     {
         try {
             putenv('VAR_1');
@@ -44,7 +44,7 @@ class EnvValidatorCommandTest extends TestCase
     }
 
     /** @test */
-    function it_does_not_throw_exception_if_validation_is_met()
+    public function it_does_not_throw_exception_if_validation_is_met()
     {
         putenv('VAR_1=123');
         putenv('VAR_2=A');
@@ -60,7 +60,7 @@ class EnvValidatorCommandTest extends TestCase
     }
 
     /** @test */
-    function it_doest_not_throw_exception_if_no_configuration_is_defined()
+    public function it_doest_not_throw_exception_if_no_configuration_is_defined()
     {
         Config::set('env-validator.rules', []);
 

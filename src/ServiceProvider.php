@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider as Provider;
 
 class ServiceProvider extends Provider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/env-validator.php';
+    const CONFIG_PATH = __DIR__.'/../config/env-validator.php';
 
     public function boot()
     {
