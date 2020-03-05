@@ -19,16 +19,9 @@ class EnvValidator
     public function validate()
     {
         if ($this->validator->fails()) {
-            $messages = array_values(
-                $this->validator->messages()->all()
-            );
+            $messages = array_values($this->validator->messages()->all());
 
-            $message = 'The .env file has some problems.'
-                . ' Please check config/laravel-env-validator.php'
-                . PHP_EOL
-                . implode(PHP_EOL, $messages);
-
-            throw new Exception($message);
+            throw EnvValidationFailed::fromMessages($messages);
         }
     }
 }

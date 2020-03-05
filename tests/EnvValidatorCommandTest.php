@@ -2,12 +2,12 @@
 
 namespace Melihovv\LaravelEnvValidator\Tests;
 
-use Melihovv\LaravelEnvValidator\EnvValidatorFactory;
-use Melihovv\LaravelEnvValidator\Exception;
+use Illuminate\Support\Facades\Config;
+use Melihovv\LaravelEnvValidator\EnvValidationFailed;
 use Melihovv\LaravelEnvValidator\ServiceProvider;
 use Orchestra\Testbench\TestCase;
 
-class LaravelEnvValidatorTest extends TestCase
+class EnvValidatorCommandTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
@@ -21,13 +21,13 @@ class LaravelEnvValidatorTest extends TestCase
             putenv('VAR_1');
             putenv('VAR_2');
 
-            \Config::set('laravel-env-validator.rules', [
+            Config::set('env-validator.rules', [
                 'VAR_1' => 'required',
                 'VAR_2' => 'required',
             ]);
-            $envValidator = EnvValidatorFactory::buildFromLaravelConfig();
-            $envValidator->validate();
-        } catch (Exception $e) {
+
+            $this->artisan('config:env-validator');
+        } catch (EnvValidationFailed $e) {
             $this->assertStringContainsString(
                 'VAR_1',
                 $e->getMessage()
@@ -49,12 +49,12 @@ class LaravelEnvValidatorTest extends TestCase
         putenv('VAR_1=123');
         putenv('VAR_2=A');
 
-        \Config::set('laravel-env-validator.rules', [
+        Config::set('env-validator.rules', [
             'VAR_1' => 'required',
             'VAR_2' => 'required|in:A,B,C',
         ]);
-        $envValidator = EnvValidatorFactory::buildFromLaravelConfig();
-        $envValidator->validate();
+
+        $this->artisan('config:env-validator');
 
         $this->assertTrue(true);
     }
@@ -62,10 +62,9 @@ class LaravelEnvValidatorTest extends TestCase
     /** @test */
     public function it_doest_not_throw_exception_if_no_configuration_is_defined()
     {
-        \Config::set('laravel-env-validator.rules', []);
+        Config::set('env-validator.rules', []);
 
-        $envValidator = EnvValidatorFactory::buildFromLaravelConfig();
-        $envValidator->validate();
+        $this->artisan('config:env-validator');
 
         $this->assertTrue(true);
     }

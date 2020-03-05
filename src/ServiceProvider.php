@@ -3,16 +3,15 @@
 namespace Melihovv\LaravelEnvValidator;
 
 use Illuminate\Support\ServiceProvider as Provider;
-use Melihovv\LaravelEnvValidator\Console\EnvValidatorCommand;
 
 class ServiceProvider extends Provider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/laravel-env-validator.php';
+    const CONFIG_PATH = __DIR__.'/../config/env-validator.php';
 
     public function boot()
     {
         $this->publishes([
-            self::CONFIG_PATH => config_path('laravel-env-validator.php'),
+            self::CONFIG_PATH => config_path('env-validator.php'),
         ], 'config');
 
         if ($this->app->runningInConsole()) {
@@ -22,6 +21,6 @@ class ServiceProvider extends Provider
 
     public function register()
     {
-        $this->mergeConfigFrom(self::CONFIG_PATH, 'laravel-env-validator');
+        $this->mergeConfigFrom(self::CONFIG_PATH, 'env-validator');
     }
 }
