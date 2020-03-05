@@ -1,9 +1,8 @@
 <?php
 
-namespace Melihovv\LaravelEnvValidator\Console;
+namespace Melihovv\LaravelEnvValidator;
 
 use Illuminate\Console\Command;
-use Melihovv\LaravelEnvValidator\EnvValidatorFactory;
 
 class EnvValidatorCommand extends Command
 {

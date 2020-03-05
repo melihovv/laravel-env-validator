@@ -15,9 +15,20 @@
       "email": "amelihovv@ya.ru"
     }
   ],
+  "require": {
+    "php": ">=7.2",
+    "illuminate/config": "^6.0|^7.0",
+    "illuminate/console": "^6.0|^7.0",
+    "illuminate/support": "^6.0|^7.0",
+    "illuminate/validation": "^6.0|^7.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0|^5.0",
+    "phpunit/phpunit": "^8.4|^9.0"
+  },
   "autoload": {
     "psr-4": {
-      "Melihovv\\LaravelEnvValidator\\": "src/LaravelEnvValidator"
+      "Melihovv\\LaravelEnvValidator\\": "src"
     }
   },
   "autoload-dev": {
@@ -25,17 +36,8 @@
       "Melihovv\\LaravelEnvValidator\\Tests\\": "tests/"
     }
   },
-  "require": {
-    "php": ">=7.2",
-    "illuminate/support": "^6.0",
-    "illuminate/validation": "^6.0"
-  },
-  "require-dev": {
-    "orchestra/testbench": "^4.0",
-    "phpunit/phpunit": "^8.0"
-  },
   "scripts": {
-    "phpunit": "phpunit --dont-report-useless-tests"
+    "phpunit": "phpunit"
   },
   "extra": {
     "laravel": {

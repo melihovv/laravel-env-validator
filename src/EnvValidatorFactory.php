@@ -8,7 +8,7 @@ class EnvValidatorFactory
 {
     public static function buildFromLaravelConfig()
     {
-        $config = config('laravel-env-validator.rules', []);
+        $config = config('env-validator.rules', []);
 
         $env = [];
         foreach (array_keys($config) as $variable) {
