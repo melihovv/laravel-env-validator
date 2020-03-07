@@ -1,7 +1,7 @@
 Laravel Env Validator
 =====================
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/melihovv/laravel-env-validator/run-php-tests?label=Tests)
+![GitHub Workflow Status](https://github.com/melihovv/laravel-env-validator/workflows/Run%20tests/badge.svg)
 [![styleci](https://styleci.io/repos/78041678/shield)](https://styleci.io/repos/78041678)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/laravel-env-validator.svg)](https://packagist.org/packages/melihovv/laravel-env-validator)
