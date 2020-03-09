@@ -28,6 +28,6 @@ return [
         'SESSION_DRIVER' => 'in:file,cookie,database,apc,memcached,redis,dynamodb,array',
         'QUEUE_CONNECTION' => 'in:sync,database,beanstalkd,sqs,redis,null',
         'LOG_CHANNEL' => 'in:single,daily,slack,syslog,errorlog,custom,stack,null,stderr,stdout',
-        'MAIL_DRIVER' => 'in:smtp,sendmail,mailgun,ses,postmark,log,array',
+        'MAIL_MAILER' => 'in:smtp,sendmail,mailgun,ses,postmark,log,array',
     ],
 ];
